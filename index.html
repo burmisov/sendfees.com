@@ -66,7 +66,7 @@ h1 em{font-style:normal;color:var(--acc-text)}
 .lede{margin:0;padding:8px 0 16px}
 .lede b{font-weight:400;color:var(--fg)}
 /* the switch and the byline */
-.byrow{min-height:32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 12px;padding:4px 0 8px}
+.byrow{min-height:32px;display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:4px 12px;padding:4px 0 8px}
 .byrow > span{white-space:nowrap}
 .byrow .ast{color:var(--acc)}
 .sw{display:inline-flex;align-items:center;gap:8px;font:inherit;line-height:inherit;color:var(--muted);background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
@@ -126,7 +126,8 @@ a.x .fav{display:inline-block;width:.95em;height:.95em;vertical-align:-.12em;bor
 a.x .arr{margin-left:.2em}
 .tech{margin-top:28px;padding-top:12px;border-top:1px solid var(--faint);display:flex;gap:6px 20px;flex-wrap:wrap}
 .strip{display:inline-block;height:6px;width:40px;background:var(--acc);border-radius:1px;vertical-align:middle}
-footer{margin-top:14px;border-top:var(--rule) solid var(--acc);padding-block:18px;display:flex;justify-content:flex-end;align-items:center}
+footer{margin-top:14px;border-top:var(--rule) solid var(--acc);padding-block:18px;display:flex;justify-content:space-between;align-items:center}
+footer .ast{color:var(--acc)}
 @media (max-width:640px){
   :root{--feefs:1.05rem}
   .cols,.line{grid-template-columns:1.6em 22px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 22px;gap:0 8px}
@@ -143,7 +144,7 @@ footer{margin-top:14px;border-top:var(--rule) solid var(--acc);padding-block:18p
   <div class="head"><a class="home" href="/" aria-label="sendfees.com, home"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="4" y="29" width="42" height="42" rx="4" fill="currentColor"/><rect x="54" y="29" width="42" height="42" rx="4" fill="var(--acc)"/></svg></a><h1>What does it <em>cost</em> to send a stablecoin?</h1></div>
   <p class="lede">read from the chains, not quoted · <b>3,449</b> real transfers on 44 chains, each linked to its explorer · read <b>19–20 Oct 2026</b></p>
 
-  <div class="byrow"><button class="sw" id="sw" role="switch" aria-checked="true"><span class="knob"></span>only chains holding $0.5 bn+<span class="hid"></span></button><span>by <a class="x" href="https://burmisov.com/" target="_blank" rel="noopener">burmisov.com <img class="fav" src="/fav/burmisov.com.png" alt="" width="14" height="14" loading="lazy"><span class="arr">↗</span></a> <span class="ast">✱</span></span></div>
+  <div class="byrow"><button class="sw" id="sw" role="switch" aria-checked="true"><span class="knob"></span>only chains holding $0.5 bn+<span class="hid"></span></button></div>
   <div class="cols"><span class="c-fig">median fee</span></div>
   <ol class="list" id="rating"><li class="row" id="plasma" data-open="false">
   <button class="line" aria-expanded="false" aria-controls="r-plasma" title="Show the details">
@@ -744,7 +745,7 @@ footer{margin-top:14px;border-top:var(--rule) solid var(--acc);padding-block:18p
   </section>
 
   <div class="tech"><a class="x" href="/data.json">data.json</a><a class="x" href="/llms.txt">llms.txt</a><a class="x" href="https://github.com/burmisov/sendfees.com" target="_blank" rel="noopener">github.com/burmisov/sendfees.com <svg class="fav" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="arr">↗</span></a><a class="x" href="https://github.com/burmisov/sendfees.com/issues" target="_blank" rel="noopener">report a correction <svg class="fav" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="arr">↗</span></a></div>
-  <footer><span class="strip"></span></footer>
+  <footer><span class="small">by <a class="x" href="https://burmisov.com/" target="_blank" rel="noopener">burmisov.com <img class="fav" src="/fav/burmisov.com.png" alt="" width="14" height="14" loading="lazy"><span class="arr">↗</span></a> <span class="ast">✱</span></span><span class="strip"></span></footer>
 </div>
 <script>
 
