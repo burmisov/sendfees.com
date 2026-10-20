@@ -79,7 +79,7 @@ h1 em{font-style:normal;color:var(--acc-text)}
 .sw .hid{margin-left:.5ch}
 body.big .row.small{display:none}
 /* the table: place · mark · name · figure · chevron, every item on the row's centre line (P9, P10) */
-.cols,.line{display:grid;grid-template-columns:2em 24px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 16px;gap:0 12px;align-items:center}
+.cols,.line{display:grid;grid-template-columns:2em 24px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 28px;gap:0 12px;align-items:center}
 .cols{padding:4px 0 6px;border-bottom:var(--rule) solid var(--acc)}  /* the thick rule starts the table */
 .cols .c-fig{grid-column:4}
 .list{list-style:none;margin:0;padding:0}
@@ -99,7 +99,7 @@ body.big .row.small{display:none}
 .fig.none{color:var(--quiet)}
 .fee.est{color:var(--muted)}
 .fee.est::before{content:"≈ ";color:var(--quiet)}
-.chev{width:16px;height:16px;color:var(--muted);transition:transform .15s}
+.chev{width:16px;height:16px;justify-self:center;color:var(--muted);transition:transform .15s}  /* inset from the right edge */
 .row[data-open="true"] .chev{transform:rotate(90deg);color:var(--fg)}
 .row[data-open="true"] .line{background:color-mix(in srgb,var(--acc) 10%,transparent)}
 /* the details */
@@ -129,7 +129,7 @@ a.x .arr{margin-left:.2em}
 footer{margin-top:14px;border-top:var(--rule) solid var(--acc);padding-block:18px;display:flex;justify-content:flex-end;align-items:center}
 @media (max-width:640px){
   :root{--feefs:1.05rem}
-  .cols,.line{grid-template-columns:1.6em 22px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 14px;gap:0 8px}
+  .cols,.line{grid-template-columns:1.6em 22px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 22px;gap:0 8px}
   .sw .hid{display:none}
   .receipt{font-size:14px;padding:12px}
   .receipt dd .nat{min-width:0}
