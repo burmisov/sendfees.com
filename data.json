@@ -6,6 +6,7 @@
   },
   "site": "https://sendfees.com",
   "about": "What a plain USDC or USDT transfer costs on each chain: the median fee of real transfers read from the chain through free public endpoints, in US dollars at the hour they were read. Where some senders pay nothing (prepaid energy, gasless or sponsored transfers) the figure is what a sender paying its own fee pays; paidLess says who paid less.",
+  "license": "CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/ — use it freely, with credit to sendfees.com (https://sendfees.com/LICENSE.txt)",
   "prices": "each chain's price block names its on-chain source; none is published where the page shows a market-data price",
   "chains": [
     {

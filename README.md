@@ -11,3 +11,8 @@ This repository is what the site serves:
 - `llms.txt` — the page for a language model
 
 The page is a static snapshot; each row says when its chain was read.
+
+## Licence
+
+The data and the text here are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) —
+use them freely, with credit to sendfees.com. See `LICENSE.txt`. Chain marks and site icons belong to their owners.

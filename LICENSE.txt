@@ -1,0 +1,8 @@
+sendfees.com — licence
+
+Everything this site serves — the page, its text, data.json, llms.txt and the figures in them — is
+released under the Creative Commons Attribution 4.0 International licence (CC BY 4.0),
+https://creativecommons.org/licenses/by/4.0/ — use it freely, with credit to sendfees.com.
+
+The chain marks and site icons belong to their owners and are used only to name the chains and sites
+they stand for; they are not covered by this licence.

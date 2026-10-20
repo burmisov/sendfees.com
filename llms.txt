@@ -109,3 +109,4 @@ EDGE Chain | — | — | — | no plain transfer found
 
 - [github.com/burmisov/sendfees.com](https://github.com/burmisov/sendfees.com): the files this site serves, as committed
 - [report a correction](https://github.com/burmisov/sendfees.com/issues)
+- Licence: the data and the text are CC BY 4.0 — https://sendfees.com/LICENSE.txt
