@@ -1,0 +1,111 @@
+# sendfees.com
+
+> What does it cost to send a stablecoin? Read from the chains, not quoted: the median fee of real, plain USDC or USDT transfers on each of 46 chains, in US dollars at the hour they were read, each with its transaction. Read 19 Oct 2026 – 20 Oct 2026.
+
+A plain transfer is one ordinary account sending the coin straight to another, succeeding, and doing nothing else. Transfers through smart wallets, relayers and other contracts, failed ones, and anything that also swaps, bridges or pays out in batches are left out and counted by reason. A transfer to a wallet that held none of the coin costs more and is kept apart as a first-time transfer. Where some senders pay nothing — prepaid energy on Tron, gasless transfers on Sui, a sponsor or relayer paying the gas — the figure is what a sender paying its own fee pays, and the share that paid less is given beside it. Figures are written out in full, two significant digits.
+
+chain | median fee | plain transfers | window | note
+Plasma | $0.0000000053 | 23 | 24 h | 
+Stellar | $0.0000018 | 60 | 1 h | 
+Kava | $0.0000031 | 2 | 24 h | 
+XRP Ledger | $0.000016 | 60 | 24 h | 
+XDC Network | $0.000021 | 18 | 24 h | 
+Kaia | $0.000044 | 29 | 24 h | 
+X Layer | $0.000092 | 7 | 24 h | 
+Sui | $0.000099 | 12 | 1 h | 60% paid $0 (gasless)
+Algorand | $0.00011 | 60 | 1 h | 
+Aptos | $0.00011 | 41 | 1 h | 
+Sonic | $0.00014 | 3 | 24 h | 
+World Chain | $0.00016 | 3 | 24 h | 
+Unichain | $0.00025 | 1 | 24 h | 
+Ink | $0.00028 | 1 | 24 h | 
+OP Mainnet | $0.00029 | 21 | 1 h | 
+Injective | $0.00035 | 23 | 1 h | 
+Tezos | $0.00036 | 17 | 24 h | 
+Pharos | $0.00037 | 3 | 24 h | 
+Sei | $0.00042 | 3 | 24 h | 
+Solana | $0.00053 | 46 | 1 h | 
+Hyperliquid | $0.00064 | 23 | 1 h | 
+Base | $0.00065 | 42 | 1 h | 
+Celo | $0.00074 | 16 | 24 h | 
+Plume | $0.00079 | 3 | 24 h | 
+Hedera | $0.00099 | 50 | 24 h | 
+Polkadot Asset Hub | $0.0011 | 20 | 24 h | 
+Cronos | $0.0012 | 4 | 24 h | 
+NEAR | $0.0013 | 26 | 1 h | 
+Starknet | $0.0015 | 22 | 24 h | 
+BNB Chain | $0.0015 | 28 | 1 h | 
+Polygon PoS | $0.0016 | 43 | 1 h | 
+TON | $0.0017 | 50 | 1 h | 
+Arbitrum One | $0.0020 | 37 | 1 h | 
+Avalanche | $0.0022 | 5 | 24 h | 
+Morph | $0.0023 | 21 | 1 h | 
+Robinhood Chain | $0.0028 | 2 | 24 h | 
+Noble | $0.010 | 5 | 24 h | 
+ZKsync Era | $0.010 | 17 | 24 h | 
+Ethereum | $0.018 | 33 | 1 h | 
+Linea | $0.14 | 2 | 24 h | 
+Tron | $2.13 | 195 | 1 h | 94% paid $0 (own or delegated energy)
+Monad | — | — | — | no plain transfer found
+Arc | — | — | — | no plain transfer found
+Codex | — | — | — | no plain transfer found
+Liquid Network | — | — | — | estimate $0.033, not a measured transfer
+EDGE Chain | — | — | — | no plain transfer found
+
+## Results
+
+- [data.json](https://sendfees.com/data.json): every row as data — the figure, its basis, the window, who paid less, the first-time figure, the median transaction, and every sampled transaction with its fee and explorer link
+
+## Chains
+
+- [Plasma](https://sendfees.com/#plasma): median $0.0000000053 over 23 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://plasmascan.to/tx/0x69ade063882bf1d76713282b7da7b712bf9608155ec1533fb7f05b94fecf7b92)
+- [Stellar](https://sendfees.com/#stellar): median $0.0000018 over 60 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://stellar.expert/explorer/public/tx/247b14ee70cc8632b4b0f55fe44dda72e7a048c8d766dbaaefd33312186e091e)
+- [Kava](https://sendfees.com/#kava): median $0.0000031 over 2 plain transfers, read on USDT; read 19 Oct 2026; [the median transaction](https://kavascan.com/tx/0x156631f9ad9ff24485567dc851f9381f0a604fadd94459263f3753dd6891c360)
+- [XRP Ledger](https://sendfees.com/#xrpl): median $0.000016 over 60 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://xrpscan.com/tx/41EDE9A8B60058875463A734B341265A2FDC014FFE584E0815FB2C499A4AE16B)
+- [XDC Network](https://sendfees.com/#xdc): median $0.000021 over 18 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://xdcscan.com/tx/0x1f0e64da73f7e0f83ac7f27793fa8692be23b12d5d35cff6abd00032ddf5abe1)
+- [Kaia](https://sendfees.com/#kaia): median $0.000044 over 29 plain transfers, read on USDT; read 19 Oct 2026; [the median transaction](https://kaiascan.io/tx/0x35b4850c5eb88c03ed53f08a0da4c5e8c0e955dc6441ea21355dcd8cafbcc7dd)
+- [X Layer](https://sendfees.com/#xlayer): median $0.000092 over 7 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://www.oklink.com/x-layer/tx/0xb44566dfb570432e2e4ad701306b85140adf9f11be83616a84eb779fcbd48d1d)
+- [Sui](https://sendfees.com/#sui): median $0.000099 over 12 plain transfers, read on USDC; read 20 Oct 2026; [the median transaction](https://suiscan.xyz/mainnet/tx/64JGDgUeBY4EG5crKnN2ZVnApWKKAwT86iuWAw5MwrL1)
+- [Algorand](https://sendfees.com/#algorand): median $0.00011 over 60 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://allo.info/tx/2URDSBES7IVRJZLP47RPWE2T5TQ3BEWALV2G4VNO5DTCYOLV533Q)
+- [Aptos](https://sendfees.com/#aptos): median $0.00011 over 41 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://explorer.aptoslabs.com/txn/7685076446?network=mainnet)
+- [Sonic](https://sendfees.com/#sonic): median $0.00014 over 3 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://sonicscan.org/tx/0xcd1123f02f9c901f3a3b4e3c8b8c3b8a4027be082768ea915ad6f914a010e6bf)
+- [World Chain](https://sendfees.com/#worldchain): median $0.00016 over 3 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://worldscan.org/tx/0xaa3df6c2ea7773a13dee16108c01ab6c9b9a00d2d544faa6c97610b48a39c3d0)
+- [Unichain](https://sendfees.com/#unichain): median $0.00025 over 1 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://uniscan.xyz/tx/0x40656613b3ab752f8ad7f250c6cb2248717858ef95f99c6f002cf8de0fa59c7d)
+- [Ink](https://sendfees.com/#ink): median $0.00028 over 1 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://explorer.inkonchain.com/tx/0x322c1955c09bba28d0d109224bca3564ed99447ac38202c42e7aec3840e22808)
+- [OP Mainnet](https://sendfees.com/#optimism): median $0.00029 over 21 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://optimistic.etherscan.io/tx/0x53faad6301e79ee6558d4832d2145813be855c6887d426bc109f7e27dd1e15ae)
+- [Injective](https://sendfees.com/#injective): median $0.00035 over 23 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://blockscout.injective.network/tx/0xa5084f08faf1d2ebd0b25fbaa725cf1321f6fe814c0561661f1b63b8c95dce27)
+- [Tezos](https://sendfees.com/#tezos): median $0.00036 over 17 plain transfers, read on USDT; read 19 Oct 2026; [the median transaction](https://tzkt.io/onhwmqi67MkJvHTvwEDMyjTPyA6oPHep4iYhCoFtG58i4jeR9P2)
+- [Pharos](https://sendfees.com/#pharos): median $0.00037 over 3 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://pharosscan.xyz/tx/0x08c16884dcd0cdfc0e06a33d50c0fd19aa4e3800f5d67a6ed8dd6496a98b7309)
+- [Sei](https://sendfees.com/#sei): median $0.00042 over 3 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://seiscan.io/tx/0x5cbff1aa21fa3889f06b0062d7fbf3ab3700326238e43a10fe392e38ba20a714)
+- [Solana](https://sendfees.com/#solana): median $0.00053 over 46 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://solscan.io/tx/eAfhCLNKSzqVWZED2p5W5tYNi8CPWqAr7H8SKZfmYgVwKRye6Qhw2hX1qRY8bZ3RAb3gvLdLye16PRDya6XAfmP)
+- [Hyperliquid](https://sendfees.com/#hyperliquid): median $0.00064 over 23 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://hyperevmscan.io/tx/0xba516ae4793959c8d48ad19afd38c3b5990375ac9ed24ab0dd198f742a2921d5)
+- [Base](https://sendfees.com/#base): median $0.00065 over 42 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://basescan.org/tx/0xab4be276034addabe21a2811c6f7c4cb690119ccfca81ae1f509028bc85cd70c)
+- [Celo](https://sendfees.com/#celo): median $0.00074 over 16 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://celoscan.io/tx/0xdbaf24b38b4d1fc1e2f7620dd89893076bf612affd0ef23302170a35519689e4)
+- [Plume](https://sendfees.com/#plume): median $0.00079 over 3 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://explorer.plume.org/tx/0x9f8caf7530fb504495e25570dd4a1568989432cfd48414066fb118ffb48a2f7b)
+- [Hedera](https://sendfees.com/#hedera): median $0.00099 over 50 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://hashscan.io/mainnet/transaction/1792379132.858792421)
+- [Polkadot Asset Hub](https://sendfees.com/#polkadot): median $0.0011 over 20 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://assethub-polkadot.subscan.io/extrinsic/22022452-2)
+- [Cronos](https://sendfees.com/#cronos): median $0.0012 over 4 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://cronoscan.com/tx/0x16a37791194b58183814eb864c16165d21e032062744709db36808b374419acf)
+- [NEAR](https://sendfees.com/#near): median $0.0013 over 26 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://nearblocks.io/txns/D6SGq5z9qQrvjiZfRLB2A4H1kchQ8SGTo2yn4X3ESPQF)
+- [Starknet](https://sendfees.com/#starknet): median $0.0015 over 22 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://starkscan.co/tx/0x456ca32c6a1be678627bfe3fd0927972c5c0ce1ccd3c9ff115de4672825158e)
+- [BNB Chain](https://sendfees.com/#bnb): median $0.0015 over 28 plain transfers, read on USDT; read 19 Oct 2026; [the median transaction](https://bscscan.com/tx/0x59c2143ff357dd88febc29fedbf56e2f25a277552d6020c46a3fa05fb812713f)
+- [Polygon PoS](https://sendfees.com/#polygon): median $0.0016 over 43 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://polygonscan.com/tx/0x5b6738ad9206020b2f2e71ec3e2803e3accfc9f7d6281c778876661f4ba44dc3)
+- [TON](https://sendfees.com/#ton): median $0.0017 over 50 plain transfers, read on USDT; read 19 Oct 2026; [the median transaction](https://tonviewer.com/transaction/54ea00e4e74aef4d7eb57a1625ddd79486f88c019e15ac60d1dd97e36f4b919f)
+- [Arbitrum One](https://sendfees.com/#arbitrum): median $0.0020 over 37 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://arbiscan.io/tx/0xeb76831f444cc6c896e87c6329484ad1a72822fa3db9a0393ffd9080c0e78de5)
+- [Avalanche](https://sendfees.com/#avalanche): median $0.0022 over 5 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://snowtrace.io/tx/0xcd79bddb647c4ec469263778ae57914490744b382eb536b22a7694ff39a6f229)
+- [Morph](https://sendfees.com/#morph): median $0.0023 over 21 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://explorer.morphl2.io/tx/0xa4632ec166941427b4ae9869ed7e2a23c6863050d6dc6220372c0768075a0eaf)
+- [Robinhood Chain](https://sendfees.com/#robinhood): median $0.0028 over 2 plain transfers, read on USDG; read 19 Oct 2026; [the median transaction](https://robinhoodchain.blockscout.com/tx/0xc520e3a84133e3ef2ca94d423de1f7756a150ed93241c1a6b7cedf3819fabd51)
+- [Noble](https://sendfees.com/#noble): median $0.010 over 5 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://www.mintscan.io/noble/tx/FB11EE798AC5722B571D58B0106B2613B9B36E0C99BF421ACDA0C0481F9A0EBB)
+- [ZKsync Era](https://sendfees.com/#zksync): median $0.010 over 17 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://explorer.zksync.io/tx/0x63f5b4a00042a6e71f46648f21b2666c2b202b51177428f29583c31c6bf4353d)
+- [Ethereum](https://sendfees.com/#ethereum): median $0.018 over 33 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://etherscan.io/tx/0x3b73629f9a563f438a6fabafd4bf5722cbe1e8d426a2688ef56ccf9c02000cc6)
+- [Linea](https://sendfees.com/#linea): median $0.14 over 2 plain transfers, read on USDC; read 19 Oct 2026; [the median transaction](https://lineascan.build/tx/0x4e9e159201e7addb6c4f9b56fee3512afd09be390650466d9d770cedb1a2086f)
+- [Tron](https://sendfees.com/#tron): median $2.13 over 195 plain transfers, read on USDT; read 20 Oct 2026; [the median transaction](https://tronscan.org/#/transaction/aea8717e9de35df04bb61c8cfb60aa290e285cd6452ec5ebd70b4beb9abea041)
+- [Monad](https://sendfees.com/#monad): no plain transfer found, read on USDC; read 19 Oct 2026
+- [Arc](https://sendfees.com/#arc): no plain transfer found, read on USDC; read 19 Oct 2026
+- [Codex](https://sendfees.com/#codex): no plain transfer found, read on USDC; read 19 Oct 2026
+- [Liquid Network](https://sendfees.com/#liquid): estimate $0.033 (the coin is not visible on the chain), read on USDT; read 20 Oct 2026; [the median transaction](https://blockstream.info/liquid/tx/c213516dbc7f2952e4ec599c8e57b9c3571ae162bbb9b523a871c03dafc47e0d)
+- [EDGE Chain](https://sendfees.com/#edge): no plain transfer found, read on USDC; read 19 Oct 2026
+
+## Optional
+
+- [github.com/burmisov/sendfees.com](https://github.com/burmisov/sendfees.com): the files this site serves, as committed
+- [report a correction](https://github.com/burmisov/sendfees.com/issues)
