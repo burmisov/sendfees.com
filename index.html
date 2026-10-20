@@ -101,9 +101,9 @@ body.big .row.small{display:none}
 .fee.est::before{content:"≈ ";color:var(--quiet)}
 .chev{width:16px;height:16px;justify-self:center;color:var(--muted);transition:transform .15s}  /* inset from the right edge */
 .row[data-open="true"] .chev{transform:rotate(90deg);color:var(--fg)}
-.row[data-open="true"] .line{background:color-mix(in srgb,var(--acc) 10%,transparent)}
+.row[data-open="true"] .line{background:color-mix(in srgb,var(--acc) 10%,transparent);border-radius:var(--radius) var(--radius) 0 0}  /* one shape with the details below */
 /* the details */
-.receipt{display:none;margin:0 0 14px;padding:14px 16px;background:var(--surface);border-radius:var(--radius);font-size:15px;line-height:1.45}
+.receipt{display:none;margin:0 0 14px;padding:14px 16px;background:var(--surface);border-radius:0 0 var(--radius) var(--radius);font-size:15px;line-height:1.45}
 .row[data-open="true"] .receipt{display:block}
 .receipt .hd{display:flex;justify-content:space-between;gap:4px 12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--faint);margin-bottom:10px}
 .receipt dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:baseline}
