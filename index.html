@@ -80,7 +80,8 @@ h1 em{font-style:normal;color:var(--acc-text)}
 /* rows under the floor: hidden by the switch; they fade and slide in and out (display + height animate
    where the browser can — @starting-style, transition-behavior, interpolate-size — and simply switch elsewhere) */
 :root{interpolate-size:allow-keywords}
-.row{overflow:hidden;transition:opacity .22s ease-out,translate .22s ease-out,height .22s ease-out,display .22s allow-discrete;height:auto}
+.row{overflow:hidden;transition:opacity .22s ease-out,translate .22s ease-out,height .22s ease-out,display .22s allow-discrete,background-color 1.2s ease-out;height:auto}
+.row.fresh{background:color-mix(in srgb,var(--acc) 14%,transparent);transition-property:opacity,translate,height,display}  /* rows just revealed: tinted at once, then they blend in over a second */
 @starting-style{.row{opacity:0;translate:0 -6px;height:0}}
 body.big .row.under{display:none;opacity:0;translate:0 -6px;height:0}
 @media (prefers-reduced-motion:reduce){.row{transition:none}}
@@ -764,7 +765,13 @@ for (const row of document.querySelectorAll('.row')) {
 }
 const sw = document.getElementById('sw');
 const nSmall = document.querySelectorAll('.row.under').length;
+let freshTimer = null;
 function setSw(on) {
+  const under = [...document.querySelectorAll('.row.under')];
+  if (!on && document.body.classList.contains('big')) { // revealing: mark what appeared, then let it blend in
+    clearTimeout(freshTimer); for (const r of under) r.classList.add('fresh');
+    freshTimer = setTimeout(() => { for (const r of under) r.classList.remove('fresh'); }, 450);
+  }
   document.body.classList.toggle('big', on); sw.setAttribute('aria-checked', String(on));
   sw.querySelector('.hid').textContent = on ? `· ${nSmall} hidden` : '';
   try { localStorage.setItem('ssf-big2', on ? '1' : '0'); } catch (e) {}
