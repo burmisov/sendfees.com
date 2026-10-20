@@ -80,11 +80,12 @@ h1 em{font-style:normal;color:var(--acc-text)}
 /* rows under the floor: hidden by the switch; they fade and slide in and out (display + height animate
    where the browser can — @starting-style, transition-behavior, interpolate-size — and simply switch elsewhere) */
 :root{interpolate-size:allow-keywords}
-.row{overflow:hidden;transition:opacity .22s ease-out,translate .22s ease-out,height .22s ease-out,display .22s allow-discrete,background-color 1.2s ease-out;height:auto}
-.row.fresh{background:color-mix(in srgb,var(--acc) 14%,transparent);transition-property:opacity,translate,height,display}  /* rows just revealed: tinted at once, then they blend in over a second */
+.row{overflow:hidden;height:auto}
+body.ready .row{transition:opacity .22s ease-out,translate .22s ease-out,height .22s ease-out,display .22s allow-discrete,background-color .12s ease-out}
+.row.fresh{background:color-mix(in srgb,var(--acc) 14%,transparent);transition-property:opacity,translate,height,display}  /* rows just revealed: tinted at once, gone again in a blink */
 @starting-style{.row{opacity:0;translate:0 -6px;height:0}}
 body.big .row.under{display:none;opacity:0;translate:0 -6px;height:0}
-@media (prefers-reduced-motion:reduce){.row{transition:none}}
+@media (prefers-reduced-motion:reduce){body.ready .row{transition:none}}
 /* the table: place · mark · name · figure · chevron, every item on the row's centre line (P9, P10) */
 .cols,.line{display:grid;grid-template-columns:2em 24px minmax(0,1fr) calc(var(--figw) * 0.6 * var(--feefs)) 28px;gap:0 12px;align-items:center}
 .cols{padding:4px 0 6px;border-bottom:var(--rule) solid var(--acc)}  /* the thick rule starts the table */
@@ -146,7 +147,8 @@ footer .ast{color:var(--acc)}
 
 </style>
 </head>
-<body>
+<body class="big">
+<script>try{if(localStorage.getItem('ssf-big2')==='0')document.body.classList.remove('big')}catch(e){}</script>
 <div class="wrap">
   <div class="head"><a class="home" href="/" aria-label="sendfees.com, home"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="4" y="29" width="42" height="42" rx="4" fill="currentColor"/><rect x="54" y="29" width="42" height="42" rx="4" fill="var(--acc)"/></svg></a><h1>What does it <em>cost</em> to send a stablecoin?</h1></div>
   <p class="lede">read from the chains, not quoted · <b>3,449</b> real transfers on 44 chains, each linked to its explorer · read <b>19–20 Oct 2026</b></p>
@@ -768,9 +770,9 @@ const nSmall = document.querySelectorAll('.row.under').length;
 let freshTimer = null;
 function setSw(on) {
   const under = [...document.querySelectorAll('.row.under')];
-  if (!on && document.body.classList.contains('big')) { // revealing: mark what appeared, then let it blend in
+  if (!on && document.body.classList.contains('big') && document.body.classList.contains('ready')) { // revealing: mark what appeared, then let it blend in
     clearTimeout(freshTimer); for (const r of under) r.classList.add('fresh');
-    freshTimer = setTimeout(() => { for (const r of under) r.classList.remove('fresh'); }, 450);
+    freshTimer = setTimeout(() => { for (const r of under) r.classList.remove('fresh'); }, 300);  // shown for the time it took to appear, gone in half of it
   }
   document.body.classList.toggle('big', on); sw.setAttribute('aria-checked', String(on));
   sw.querySelector('.hid').textContent = on ? `· ${nSmall} hidden` : '';
@@ -779,6 +781,8 @@ function setSw(on) {
 sw.addEventListener('click', () => setSw(sw.getAttribute('aria-checked') !== 'true'));
 let stored = null; try { stored = localStorage.getItem('ssf-big2'); } catch (e) {}
 setSw(stored !== '0');
+// transitions only after the first paint: nothing moves on load or reload
+requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('ready')));
 if (location.hash.length > 1) { const row = document.getElementById(location.hash.slice(1)); if (row) { if (row.classList.contains('under')) setSw(false); row.querySelector('.line').click(); row.scrollIntoView({ block: 'center' }); } }
 
 </script>
